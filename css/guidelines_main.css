@@ -233,6 +233,13 @@ form.retningslinjerSok #searchinput {
   right: 40px;
 }
 
+.Guidelinesfrontpage .htmlicon {
+  position: absolute;
+  top: 58px;
+  height: 40px;
+  right: 40px;
+}
+
 /*Styles for one single guideline*/
 /*
  ---------------------------------
