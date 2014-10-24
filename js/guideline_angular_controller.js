@@ -3,7 +3,7 @@ var retningslinjeControllers = angular.module('retningslinjeControllers', ['angu
 retningslinjeControllers.controller('guidelinesListCtrl', ['$scope', 'Guideline', 'angularLoad',  
     function($scope, Guideline, angularLoad) {
         $scope.guidelines = Guideline.query();
-
+        console.log($scope.guidelines);
     }
 ]);
 
@@ -41,6 +41,15 @@ retningslinjeControllers.controller('guidelineRecommendationCtrl', ['$scope', '$
         });
     }
 ])
+
+retningslinjeControllers.controller('guidelineSingleRecommendationCtrl', ['$scope', '$routeParams', 'Recommendation', 'angularLoad', 
+    function($scope, $routeParams, Recommendation, angularLoad) {
+        $scope.recommendation = Recommendation.get({
+            id: $routeParams.recommendationId
+        });
+    }
+])
+
 
     .directive('grading', function() {
 
