@@ -27,12 +27,12 @@
 
 @font-face {
     font-family: 'Calibri-Bold';
-    src: url('../../fonts/Calibri/2B1987_0_0.eot');
-    src: url('../../fonts/Calibri/2B1987_0_0.eot?#iefix') format('embedded-opentype'),url('../../fonts/Calibri/2B1987_0_0.woff') format('woff'),url('../../fonts/Calibri/2B1987_0_0.ttf') format('truetype');
+    src: url('../fonts/Calibri/2B1987_0_0.eot');
+    src: url('../fonts/Calibri/2B1987_0_0.eot?#iefix') format('embedded-opentype'),url('../fonts/Calibri/2B1987_0_0.woff') format('woff'),url('../fonts/Calibri/2B1987_0_0.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Calibri';
-    src: url('../../fonts/Calibri/2B1987_1_0.eot');
-    src: url('../../fonts/Calibri/2B1987_1_0.eot?#iefix') format('embedded-opentype'),url('../../fonts/Calibri/2B1987_1_0.woff') format('woff'),url('../../fonts/Calibri/2B1987_1_0.ttf') format('truetype');
+    src: url('../fonts/Calibri/2B1987_1_0.eot');
+    src: url('../fonts/Calibri/2B1987_1_0.eot?#iefix') format('embedded-opentype'),url('../fonts/Calibri/2B1987_1_0.woff') format('woff'),url('../fonts/Calibri/2B1987_1_0.ttf') format('truetype');
 }

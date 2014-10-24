@@ -10,10 +10,13 @@
  */
 angular
   .module('guidelinePreviewApp', ['ngRoute', 'ngResource', 'toastr', 'LocalStorageModule'])
-
   .config(['$httpProvider', function ($httpProvider) {
-        $httpProvider.interceptors.push('authInterceptorService');
-    }])
+      $httpProvider.interceptors.push('authInterceptorService');
+  }])
+  .config(['localStorageServiceProvider', function (localStorageServiceProvider) {
+      localStorageServiceProvider.setPrefix('ls');
+  }])
+
 
   .config(['$routeProvider', 
   	function($routeProvider){
