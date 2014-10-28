@@ -7,7 +7,7 @@
  * # publishedStage
  */
 angular.module('guidelinePreviewApp')
-  .directive('publishedStage', function ($parse) {
+  .directive('publishedStage', function () {
     return {
       template: '<div class="publishedstage"><p><span class="glyphicon glyphicon-info-sign"></span> {{resource}} er {{publishedStageText}}</p></div>',
       restrict: 'E',

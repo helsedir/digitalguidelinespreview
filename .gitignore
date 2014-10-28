@@ -7,3 +7,4 @@ package.json
 backup/
 .tmp/
 bower_components/
+dist/
