@@ -184,3 +184,21 @@ form.retningslinjerSok {
     font-size: 28px;
     margin-top: 20px;
 }
+
+.publishedstage{
+  width: 200px;
+  border: 1px solid #d6e9c6;
+  box-shadow: 3px 3px 1px rgba($colorBlack, 0.05);
+ -moz-border-radius: 4px / 4px;
+  -webkit-border-radius: 4px 4px;
+  border-radius: 4px / 4px;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  padding: 30px 10px;
+  text-align: center;
+  font-size: 20px;
+  font: $fontSoho;
+  z-index: 1;
+  background-color: rgba(#dff0d8, 1);
+}

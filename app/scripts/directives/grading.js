@@ -6,28 +6,25 @@
  * @description
  * # grading
  */
-angular.module('guidelinePreviewApp')
+angular.module('guidelinePreviewApp') 
 .directive('grading', function() {
-
-            function link(scope, element, attrs) {
-                scope.$watch(attrs.grading, function(value) {
-
-                        if (attrs.grading == "strong")
-                            element.addClass("gradingStrong");
-                        else if (attrs.grading == "weak")
-                            element.addClass("gradingWeak");
-                        else
-                            element.addClass("gradingNone");
-                    }
-
-                );
-            }
-
-            return {
-                restrict: 'A',
-                link: link
-            };
-
-        });
+    return{
+        restrict: 'A',
+        scope: { grading: '@'},
+        link: function (scope, element, attrs) {
+            attrs.$observe('grading', function(grading) {
+                if (grading == "strong"){
+                    element.addClass("gradingStrong");
+                }
+                else if (grading == "weak"){
+                    element.addClass("gradingWeak");
+                }
+                else if (grading == "null"){
+                    element.addClass("gradingNone");
+                }
+            });
+        }
+    };
+});
 
       

@@ -9,7 +9,7 @@
 angular.module('guidelinePreviewApp')
   .directive('publishedStage', function ($parse) {
     return {
-      template: '<div class="publishedstage {{publishedStage}}">{{resource}} er {{publishedStageText}}</div>',
+      template: '<div class="publishedstage"><p><span class="glyphicon glyphicon-info-sign"></span> {{resource}} er {{publishedStageText}}</p></div>',
       restrict: 'E',
       scope: { 'publishedStage': '=publishedstage', 'resource': '@' },
       link: function postLink(scope, element, attrs) {
@@ -17,12 +17,15 @@ angular.module('guidelinePreviewApp')
       		switch(scope.publishedStage){
       			case 0:
       				scope.publishedStageText = "kladd";
+
       				break;
       			case 1:
       				scope.publishedStageText = "sent på høring";
+
       				break;
       			case 2:
       				scope.publishedStageText = "publisert";
+
       				break;
       		}
 

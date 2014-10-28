@@ -38,7 +38,7 @@ angular
   		}).
   		when('/:guidelineId/section/:sectionId/recommendation/:recommendationId', {
   			templateUrl: 'views/recommendation.html',
-  			controller: 'recommendationCtrl',
+  			controller: 'RecommendationCtrl',
   		}).
   		
   		otherwise({
