@@ -18,7 +18,7 @@ module.exports = function (grunt) {
   // Configurable paths for the application
   var appConfig = {
     app: require('./bower.json').appPath || 'app',
-    dist: 'dist'
+    dist: '../dist/preview'
   };
 
   // Define the configuration for all the tasks
@@ -132,6 +132,7 @@ module.exports = function (grunt) {
 
     // Empties folders to start fresh
     clean: {
+      options: { force: true },
       dist: {
         files: [{
           dot: true,
@@ -335,7 +336,7 @@ module.exports = function (grunt) {
           cwd: '<%= yeoman.app %>',
           dest: '<%= yeoman.dist %>',
           src: [
-            '*.{ico,png,txt}',
+            '*.{ico,png,txt,config}',
             '.htaccess',
             '*.html',
             'views/{,*/}*.html',
@@ -376,6 +377,16 @@ module.exports = function (grunt) {
         'imagemin',
         'svgmin'
       ]
+    },
+    replace: {
+      serverUrl: {
+        src: ['<%= yeoman.dist %>/scripts/*.js'],
+        overwrite: true,                 // overwrite matched source files
+        replacements: [{
+          from: "http://localhost:50500/",
+          to: "http://digitalguidelines.azurewebsites.net/"
+        }]
+      }
     },
 
     // Test settings

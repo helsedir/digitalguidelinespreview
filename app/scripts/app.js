@@ -34,7 +34,7 @@ angular
   		}).
   		when('/:guidelineId/childsectionIndex/:sectionId', {
   			templateUrl: 'views/childsection.html',
-  			controller: 'childsectionCtrl',
+  			controller: 'SectionCtrl',
   		}).
   		when('/:guidelineId/section/:sectionId/recommendation/:recommendationId', {
   			templateUrl: 'views/recommendation.html',
@@ -46,8 +46,8 @@ angular
   		});
   	}])
 
-  .filter('unsafe', function($sce) {
+  .filter('unsafe',['$sce', function($sce) {
       return function(val) {
           return $sce.trustAsHtml(val);
       };
-  });
+  }]);
