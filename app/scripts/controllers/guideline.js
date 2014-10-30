@@ -8,7 +8,7 @@
  * Controller of the angularApp
  */
 angular.module('guidelinePreviewApp')
-  .controller('GuidelineCtrl',['Guideline', 'toastr', '$scope', '$routeParams', '$location', function (Guideline, toastr, $scope, $routeParams, $location) {
+  .controller('GuidelineCtrl',['Guideline', 'toastr', '$scope', '$routeParams', '$location', 'ErrorService', function (Guideline, toastr, $scope, $routeParams, $location, ErrorService) {
     var guidelineId = $routeParams.guidelineId;
     var preview = false;
     preview = ($location.search()).preview;
@@ -17,7 +17,6 @@ angular.module('guidelinePreviewApp')
       		//success
     		$scope.retningslinje = guideline;
       	}, function(error){
-      		console.log(error);
-      		toastr.error(error.data.message, 'Error!');
+      		ErrorService.handleError(error);
       	});
   }]);

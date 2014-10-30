@@ -8,7 +8,7 @@
  * Controller of the angularApp
  */
 angular.module('guidelinePreviewApp')
-  .controller('SectionCtrl',['Section', 'Guideline', 'toastr', '$scope', '$routeParams', '$location', function (Section, Guideline, toastr, $scope, $routeParams, $location) {
+  .controller('SectionCtrl',['Section', 'Guideline', 'toastr', '$scope', '$routeParams', '$location', 'ErrorService', function (Section, Guideline, toastr, $scope, $routeParams, $location, ErrorService) {
     var guidelineId = $routeParams.guidelineId;
     var sectionId = $routeParams.sectionId;
     var preview = false;
@@ -18,14 +18,12 @@ angular.module('guidelinePreviewApp')
       		//success
     		$scope.guideline = guideline;
       	}, function(error){
-      		console.log(error);
-      		toastr.error(error.data.message, 'Error!');
+      		ErrorService.handleError(error);
       	});
     Section.get({_id: sectionId, preview: preview}).$promise.then(function(section){
       		//success
     		$scope.section = section;
       	}, function(error){
-      		console.log(error);
-      		toastr.error(error.data.message, 'Error!');
+      		ErrorService.handleError(error);
       	});
   }]);

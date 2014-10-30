@@ -40,6 +40,10 @@ angular
   			templateUrl: 'views/recommendation.html',
   			controller: 'RecommendationCtrl',
   		}).
+      when('/notpublished/:notpublished', {
+        templateUrl: 'views/notpublished.html'
+      }).
+     
   		
   		otherwise({
   			redirectTo: '/'

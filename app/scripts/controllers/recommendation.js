@@ -8,7 +8,7 @@
  * Controller of the angularApp
  */
 angular.module('guidelinePreviewApp')
-  .controller('RecommendationCtrl', ['$scope', 'Recommendation', 'toastr', '$routeParams', '$location', function ($scope, Recommendation, toastr, $routeParams, $location) {
+  .controller('RecommendationCtrl', ['$scope', 'Recommendation', 'toastr', '$routeParams', '$location', 'ErrorService', function ($scope, Recommendation, toastr, $routeParams, $location, ErrorService) {
     var recommendationId = $routeParams.recommendationId;
     var preview = false;
     preview = ($location.search()).preview;
@@ -16,7 +16,6 @@ angular.module('guidelinePreviewApp')
       		//success
     		$scope.recommendation = recommendation;
       	}, function(error){
-      		console.log(error);
-      		toastr.error(error.data.message, 'Error!');
+      		ErrorService.handleError(error);
       	});
   }]);
