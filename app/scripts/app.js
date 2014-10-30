@@ -9,7 +9,7 @@
  * Main module of the application.
  */
 angular
-  .module('guidelinePreviewApp', ['ngRoute', 'ngResource', 'toastr', 'LocalStorageModule'])
+  .module('guidelinePreviewApp', ['ngRoute', 'ngResource', 'toastr', 'LocalStorageModule', 'ui.bootstrap'])
   .config(['$httpProvider', function ($httpProvider) {
       $httpProvider.interceptors.push('authInterceptorService');
   }])
