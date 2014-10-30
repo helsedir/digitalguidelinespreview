@@ -8,9 +8,11 @@
  * Controller of the angularApp
  */
 angular.module('guidelinePreviewApp')
-  .controller('RecommendationCtrl', ['$scope', 'Recommendation', 'toastr', '$routeParams', function ($scope, Recommendation, toastr, $routeParams) {
+  .controller('RecommendationCtrl', ['$scope', 'Recommendation', 'toastr', '$routeParams', '$location', function ($scope, Recommendation, toastr, $routeParams, $location) {
     var recommendationId = $routeParams.recommendationId;
-    Recommendation.get({_id: recommendationId}).$promise.then(function(recommendation){
+    var preview = false;
+    preview = ($location.search()).preview;
+    Recommendation.get({_id: recommendationId, preview: preview}).$promise.then(function(recommendation){
       		//success
     		$scope.recommendation = recommendation;
       	}, function(error){

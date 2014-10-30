@@ -8,9 +8,12 @@
  * Controller of the angularApp
  */
 angular.module('guidelinePreviewApp')
-  .controller('GuidelineCtrl',['Guideline', 'toastr', '$scope', '$routeParams', function (Guideline, toastr, $scope, $routeParams) {
+  .controller('GuidelineCtrl',['Guideline', 'toastr', '$scope', '$routeParams', '$location', function (Guideline, toastr, $scope, $routeParams, $location) {
     var guidelineId = $routeParams.guidelineId;
-    Guideline.get({_id: guidelineId}).$promise.then(function(guideline){
+    var preview = false;
+    preview = ($location.search()).preview;
+
+    Guideline.get({_id: guidelineId, preview: preview}).$promise.then(function(guideline){
       		//success
     		$scope.retningslinje = guideline;
       	}, function(error){
