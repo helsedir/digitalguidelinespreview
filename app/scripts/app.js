@@ -28,18 +28,34 @@ angular
   			templateUrl: 'views/guideline.html',
   			controller: 'GuidelineCtrl',
   		}).
+      when('/:guidelineId/print', {
+        templateUrl: 'views/print.html',
+        controller: 'PrintCtrl',
+      }).
   		when('/:guidelineId/section/:sectionId', {
   			templateUrl: 'views/section.html',
   			controller: 'SectionCtrl',
   		}).
+      when('/:guidelineId/section/:sectionId/print', {
+        templateUrl: 'views/print.html',
+        controller: 'PrintCtrl',
+      }).
   		when('/:guidelineId/childsectionIndex/:sectionId', {
   			templateUrl: 'views/childsection.html',
   			controller: 'SectionCtrl',
   		}).
+      when('/:guidelineId/childsectionIndex/:sectionId/print', {
+        templateUrl: 'views/print.html',
+        controller: 'PrintCtrl',
+      }).
   		when('/:guidelineId/section/:sectionId/recommendation/:recommendationId', {
   			templateUrl: 'views/recommendation.html',
   			controller: 'RecommendationCtrl',
   		}).
+      when('/:guidelineId/section/:sectionId/recommendation/:recommendationId/print', {
+        templateUrl: 'views/print.html',
+        controller: 'PrintCtrl',
+      }).
       when('/notpublished/:notpublished', {
         templateUrl: 'views/notpublished.html'
       }).
