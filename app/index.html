@@ -30,7 +30,7 @@
     <![endif]-->
 
 
-        <div id="header">
+        <div id="header" ng-hide="recommendation">
             <div class="shortcuts">
                 <ul>
                     <li><a href="#content" id="contentshortcut">Gå til innhold</a></li>
@@ -273,12 +273,12 @@
        <div ng-view autoscroll="true"></div>
 
     <!--footer-->
-        <div class=" shortcuts">
+        <div class=" shortcuts" ng-hide="recommendation">
             <ul>
                 <li><a href="#bottom">Bunnlinje</a></li>
             </ul>
         </div>
-        <div id="footer">
+        <div id="footer" ng-hide="recommendation">
             <footer class=" footerwrapper">
                 <div class=" menuwrapper">
                     <div class="container">

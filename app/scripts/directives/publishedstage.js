@@ -21,7 +21,7 @@ angular.module('guidelinePreviewApp')
       	scope.$watch('publishedStage', function() { 
       		switch(scope.publishedStage){
       			case 0:
-      				scope.publishedStageText = "kladd";
+      				scope.publishedStageText = "lagret som kladd";
 
       				break;
       			case 1:
