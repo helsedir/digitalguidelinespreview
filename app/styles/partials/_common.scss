@@ -49,7 +49,7 @@ h1.nomargin-top{
 
 aside.guidelines {
     @include breakpoint("tablet") {
-        float: none;
+        float: none !important;
     }
     .module.module_person{
         margin-bottom: 50px;
