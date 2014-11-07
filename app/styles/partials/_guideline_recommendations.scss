@@ -575,6 +575,13 @@
     //    width: 1200px;
     //}
 
+    .block{
+        display: block;
+    }
+    i{
+        font-style: italic;
+    }
+
     @media (max-width: 1150px){
         /* Force table to not be like tables anymore */
             table, thead, tbody, th, td, tr { 
@@ -661,19 +668,26 @@
     table {
 
         
+        
         th {
             font-weight: bold;
             text-align: left;
         }
         @media (min-width: 1150px){
             margin: 30px auto;
+            td{
+                text-align: center;
+            }
+            th,td{
+                padding: 5px;
+            }
 
         td:first-child {
-            width: 300px;
+
             padding-left: 30px;
         }
         th:first-child {
-            width: 300px;
+
             padding-left: 30px;
         }
         td:last-child {
@@ -683,7 +697,7 @@
             padding-right: 30px;
         }
         
-        tbody tr:nth-child(odd) {
+        tbody tr:nth-child(even) {
             background: $colorBase;
         }
     }}
@@ -700,3 +714,4 @@
     max-width: 600px;
     padding: 30px 30px;
 }
+

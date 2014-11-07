@@ -195,3 +195,15 @@ form.retningslinjerSok {
   font: $fontSoho;
   z-index: 1;
 }
+
+.breakall{
+  -ms-word-break: break-all;
+       word-break: break-all;
+
+       // Non standard for webkit
+       word-break: break-word;
+
+  -webkit-hyphens: auto;
+     -moz-hyphens: auto;
+          hyphens: auto;
+}
