@@ -84,9 +84,9 @@
             </dl>
 
             <ul class="linklist">
-              <li><a href="#picoEvidensprofil" class="open-popup-link" >Evidensprofil</a></li>
-              <li><a href="#picoSummary" class="open-popup-link" >Sammendrag av studie</a></li>
-              <li><a href="#picoReferences" class="open-popup-link" >Referanser</a></li>
+              <li ng-if="pico.picoOutcomes.length > 0"><a href="#picoEvidensprofil" class="open-popup-link" >Evidensprofil</a></li>
+              <li ng-if="pico.summary.length > 0 "><a href="#picoSummary" class="open-popup-link" >Sammendrag av studie</a></li>
+              <li ng-if="pico.references.length > 0"><a href="#picoReferences" class="open-popup-link" >Referanser</a></li>
             </ul>
             <section id="picoEvidensprofil" class="white-popup mfp-hide picomodal">
               <header class="picomodalheader">

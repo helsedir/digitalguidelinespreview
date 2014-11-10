@@ -404,7 +404,7 @@
         .resp-tab-item {
             $margin: 4px;
             cursor: pointer;
-            padding: 2px 15px;
+            padding: 2px 10px;
             display: inline-block;
             background-color: $colorGallery;
             margin-right: $margin;
@@ -430,6 +430,9 @@
         }
     }
     .resp-tabs-container {
+        p{
+            font-size: 18px;
+        }
         .keyinfoheading {
             margin: 30px 0 0 0;
             line-height: 36px;
