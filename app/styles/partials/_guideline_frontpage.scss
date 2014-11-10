@@ -122,6 +122,7 @@
 }
 
 .Guidelinefrontpage .aboutexpand {
+    @extend .bulletlist;
     overflow: hidden;
     display: none;
     @include breakpoint("mobile") {

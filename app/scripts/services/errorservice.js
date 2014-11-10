@@ -15,7 +15,7 @@ angular.module('guidelinePreviewApp')
     	  toastr.warning('Du må være logget inn for å se denne ressursen');
     	}
     	else if(error.status == 400 && error.data.message == "The item is not published yet."){
-    		$location.path('/notpublished/0');
+    		toastr.warning('Denne ressursen er ikke publisert enda. Du må være logget inn for å se den');
     	}
     	else {
     	  toastr.error('Status code: ' + error.status +' '+ error.statusText + ' Error data: ' + error.data.message, 'Error!');

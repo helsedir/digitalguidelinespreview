@@ -16,11 +16,10 @@ em{
   font-style: italic;
 }
 
-.orderedlist{
+ol{
   list-style-position: inside;
   margin-top: 10px;
   list-style-type: decimal;
-
 }
 
 .smalltitle{
@@ -173,6 +172,7 @@ form.retningslinjerSok {
 
 .container .aboutsection{
     margin-top: 25px;
+    @extend .bulletlist;
 }
 
 .container .aboutsectioncontent{
