@@ -6,7 +6,7 @@
 
 
   <div class="recommendationcontent visuallyhidden">
-    <div class="recommendationexplanation" grading="{{recommendation.strength}}">
+    <div class="recommendationexplanation" grading="{{recommendation.strength}}" explanation-click>
       <div class="clickable">
         <i ng-hide="recommendation.strength == null || recommendation.strength == 'null'" class="icon" grading="{{recommendation.strength}}"></i>
         <span ng-show="recommendation.strength == 'strong'" class="recommendationstrength gradingStrong">Sterk anbefaling</span>
@@ -30,7 +30,7 @@
         
       </div>
     </div>
-    <div class="tabs">
+    <div class="tabs" responsive-tabs>
       <ul class="resp-tabs-list">
         <li ng-if="recommendation.keyInfo.length > 0"><a href="#nokkelinfo">Nøkkelinformasjon</a></li>
         <li ng-if="recommendation.picos.length > 0"><a href="#vitenskap">Kunnskapsgrunnlag</a></li>
@@ -73,9 +73,9 @@
             </dl>
 
             <ul class="linklist">
-              <li ng-if="pico.picoOutcomes.length > 0"><a href="#picoEvidensprofil" class="open-popup-link" >Evidensprofil</a></li>
-              <li ng-if="pico.summary.length > 0 "><a href="#picoSummary" class="open-popup-link" >Sammendrag av studie</a></li>
-              <li ng-if="pico.references.length > 0"><a href="#picoReferences" class="open-popup-link" >Referanser</a></li>
+              <li ng-if="pico.picoOutcomes.length > 0"><a href="#picoEvidensprofil" class="open-popup-link" magnific-popup>Evidensprofil</a></li>
+              <li ng-if="pico.summary.length > 0 "><a href="#picoSummary" class="open-popup-link" magnific-popup>Sammendrag av studie</a></li>
+              <li ng-if="pico.references.length > 0"><a href="#picoReferences" class="open-popup-link" magnific-popup>Referanser</a></li>
             </ul>
             <section id="picoEvidensprofil" class="white-popup mfp-hide picomodal">
               <header class="picomodalheader">
@@ -173,6 +173,6 @@
       </div>
     </div>
   </div>
-  <a href="#" grading="{{recommendation.strength}}" class="button-close visuallyhidden"><i class="fa fa-angle-up"></i></a>
+  <a href="#" grading="{{recommendation.strength}}" class="button-close visuallyhidden" closeaccordion><i class="fa fa-angle-up"></i></a>
 
 </div>

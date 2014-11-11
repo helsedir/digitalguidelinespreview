@@ -98,7 +98,7 @@ function runJqueryUIRecommendationStuff(){
 		
 	  
 	  
-	  jQuery('.Recommendation').on('click', 'h2', function() {
+	 /* jQuery('.Recommendation').on('click', 'h2', function() {
 	  	//make left border dissappear
 	  	$(this).parent().toggleClass("gradingBlank", 300);
 	  	$(this).closest("section").toggleClass("open");
@@ -134,12 +134,12 @@ function runJqueryUIRecommendationStuff(){
 	  		pulse.animate({"top" : "40px"}, animationSpeed);
 	  		pulse.addClass("closed");
 	  	}
-	  });
+	  });*/
 
 
 	 
 	 //Button to close dropdown
-	 $(".Recommendation").find(".button-close").on("click", function(e){
+	 /*$(".Recommendation").find(".button-close").on("click", function(e){
 	 	e.preventDefault();
 	 	var wrapper = $(this).closest(".Recommendation").find(".recommendationheader");
 	 	var areaToExpand = wrapper.siblings('.recommendationcontent, .button-close');
@@ -155,7 +155,7 @@ function runJqueryUIRecommendationStuff(){
 			wrapper.addClass('closed');
 
 		});
-	 }	});
+	 }	});*/
 
 	 //responsive tabs
 	 $('.tabs').easyResponsiveTabs({
@@ -167,12 +167,12 @@ function runJqueryUIRecommendationStuff(){
 	      }
 	 });
 
-	$('.open-popup-link').magnificPopup({
+	/*$('.open-popup-link').magnificPopup({
 	  type:'inline',
 	  midClick: true, // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
 	  closeBtnInside: false,
 
-	});
+	}); */
 	$(document).on('click', '.closemodalbutton', function (e) {
 			e.preventDefault();
 			$.magnificPopup.close();
