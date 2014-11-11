@@ -27,13 +27,10 @@
             //Main function
             this.each(function () {
                 var $respTabs = $(this);
-                var $respTabsList = $respTabs.find('ul.resp-tabs-list');
-                var respTabsId = $respTabs.attr('id');
+                //var $respTabsList = $respTabs.find('ul.resp-tabs-list');
+                //var respTabsId = $respTabs.attr('id');
                 $respTabs.find('ul.resp-tabs-list li').addClass('resp-tab-item');
-                $respTabs.css({
-                    //'display': 'block',
-                    //'width': jwidth
-                });
+                
 
                 $respTabs.find('.resp-tabs-container > div').addClass('resp-tab-content');
                 jtab_options();
@@ -93,7 +90,7 @@
 
                 //keep closed if option = 'closed' or option is 'accordion' and the element is in accordion mode
                 if(options.closed !== true && !(options.closed === 'accordion' && !$respTabsList.is(':visible')) && !(options.closed === 'tabs' && $respTabsList.is(':visible'))) {                  
-                   console.log("hei");
+                   
                     //$($respTabs.find('.resp-accordion')[tabNum]).addClass('resp-tab-active');
                     //$($respTabs.find('.resp-tab-content')[tabNum]).addClass('resp-tab-content-active').attr('style', 'display:block');
                 }

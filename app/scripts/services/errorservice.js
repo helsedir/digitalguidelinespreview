@@ -8,7 +8,7 @@
  * Service in the angularApp.
  */
 angular.module('guidelinePreviewApp')
-  .service('ErrorService', ['toastr', '$location', function ErrorService(toastr, $location) {
+  .service('ErrorService', ['toastr', function ErrorService(toastr) {
     
     this.handleError = function (error){
     	if(error.status == 401) {
