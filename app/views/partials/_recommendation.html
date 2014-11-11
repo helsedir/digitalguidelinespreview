@@ -160,8 +160,8 @@
 
           </section>
         </div>
-        <div id="rasjonale" ng-if="recommendation.rational != null" ng-bind-html="recommendation.rational | unsafe"></div>
-        <div id="praktisk" ng-if="recommendation.practicalAdvice != null" ng-bind-html="recommendation.practicalAdvice | unsafe"></div>
+        <div id="rasjonale" ng-if="recommendation.rational != null && recommendation.rational.length > 11" ng-bind-html="recommendation.rational | unsafe"></div>
+        <div id="praktisk" ng-if="recommendation.practicalAdvice != null && recommendation.practicalAdvice.length > 11" ng-bind-html="recommendation.practicalAdvice | unsafe"></div>
         <div id="referanser">
           <ol class="orderedlist">
             
