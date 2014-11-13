@@ -55,7 +55,7 @@ aside.guidelines {
     }
 
     .module_related {
- 
+
         &.module{
             margin-top: 25px; //override default
             &:last-child{
@@ -178,6 +178,9 @@ form.retningslinjerSok {
 .container .aboutsectioncontent{
     background-color: $colorWhite;
     padding: 15px 30px;
+  //classes from ../utilities/_snippets.scss
+  @extend .bulletlist;
+  @extend .table;
 }
 
 .container .aboutsectionheading{

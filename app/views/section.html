@@ -1,6 +1,6 @@
     <published-stage resource="Seksjonen" publishedstage="section.publishedStage"></published-stage>
 <article class="container Recommendations" >
-  
+
   <!--Header row-->
   <div class="row">
     <div class="col-md-12 nopadding">
@@ -23,14 +23,14 @@
   </div>
   <!--Recommendations-->
   <div class="row">
-    
-    
+
+
     <div class="col-md-12 col-lg-8">
-    
+
       <section class="Recommendation" ng-repeat="recommendation in section.recommendations" ng-hide="recommendation.isDeleted">
         <recommendation accordions></recommendation>
       </section>
-    
+
     <!--About section-->
     <about-section></about-section>
 

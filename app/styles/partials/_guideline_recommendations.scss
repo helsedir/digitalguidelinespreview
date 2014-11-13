@@ -137,7 +137,7 @@
             dd {
                 margin-left: 120px;
                 //float: left;
-           
+
             }
         }
     }
@@ -412,7 +412,7 @@
             &:last {
                 margin-right: 0;
                 margin-left: $margin;
-            } 
+            }
             a {
                 font-size: 18px;
                 color: $colorBlack;
@@ -431,7 +431,7 @@
         }
     }
     .resp-tabs-container {
-        
+
         p{
             font-size: 18px;
         }
@@ -481,7 +481,7 @@
             }
         }
         .resp-accordion {
-            
+
             padding: 7px 20px;
             background-color: $colorGallery;
             //margin-top: 0;
@@ -571,6 +571,7 @@
 
 .picomodal {
     width: auto;
+    min-width: 300px;
     position: relative;
     max-width: 1300px;
     overflow: hidden;
@@ -589,28 +590,28 @@
 
     @media (max-width: 1150px){
         /* Force table to not be like tables anymore */
-            table, thead, tbody, th, td, tr { 
-                display: block; 
+            table, thead, tbody, th, td, tr {
+                display: block;
             }
             /* Hide table headers (but not display: none;, for accessibility) */
-                thead tr { 
+                thead tr {
                     position: absolute;
                     top: -9999px;
                     left: -9999px;
                 }
-                tr { border-bottom: 15px solid #ccc; 
+                tr { border-bottom: 15px solid #ccc;
                     &:first-child{
                         @media all and (max-width: 600px){
                             margin-top: 15px;
                         }
                     }
                 }
-                    
-                    td { 
+
+                    td {
                         /* Behave  like a "row" */
                         border: none;
                         position: relative;
-                        padding-left: 250px; 
+                        padding-left: 250px;
                         @media all and (max-width: 600px){
                             padding-left: 15px;
                         }
@@ -618,15 +619,15 @@
                             margin-bottom: 5px;
                         }
                     }
-                    
-                    td:before { 
+
+                    td:before {
                         /* Now like a table header */
                         position: absolute;
                         /* Top/left values mimic padding */
                         top: 6px;
                         left: 6px;
-                        width: 45%; 
-                        padding-right: 10px; 
+                        width: 45%;
+                        padding-right: 10px;
                         white-space: nowrap;
                         @media all and (max-width: 600px){
                             position: relative;
@@ -672,8 +673,8 @@
     }
     table {
 
-        
-        
+
+
         th {
             font-weight: bold;
             text-align: left;
@@ -701,7 +702,7 @@
         th:last-child {
             padding-right: 30px;
         }
-        
+
         tbody tr:nth-child(even) {
             background: $colorBase;
         }
@@ -721,5 +722,9 @@
 }
 
 #rasjonale, #praktisk, #nokkelinfo{
+  //classes from ../utilities/_snippets.scss
     @extend .bulletlist;
+    @extend .table;
 }
+
+
