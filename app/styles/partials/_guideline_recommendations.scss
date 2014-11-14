@@ -127,7 +127,7 @@
             overflow: auto;
             dt {
                 float: left;
-                //width: 160px;
+                width: auto;
                 overflow: hidden;
                 clear: left;
                 text-align: right;
@@ -137,7 +137,7 @@
             dd {
                 margin-left: 120px;
                 //float: left;
-           
+
             }
         }
     }
@@ -330,6 +330,7 @@
 
 /* Styling for EKG border  */
 .Recommendation .textContainer {
+    @extend .bulletlist;
     margin-left: 50px;
     margin-right: 30px;
     padding-left: 20px;
@@ -396,7 +397,7 @@
 .Recommendation .tabs {
     margin-top: 45px;
     width: 100%;
-    ul {
+    .resp-tabs-list {
         margin-bottom: 20px;
         margin-left: 50px;
         margin-right: 30px;
@@ -404,14 +405,14 @@
         .resp-tab-item {
             $margin: 4px;
             cursor: pointer;
-            padding: 2px 15px;
+            padding: 2px 10px;
             display: inline-block;
             background-color: $colorGallery;
             margin-right: $margin;
             &:last {
                 margin-right: 0;
                 margin-left: $margin;
-            } 
+            }
             a {
                 font-size: 18px;
                 color: $colorBlack;
@@ -430,6 +431,10 @@
         }
     }
     .resp-tabs-container {
+
+        p{
+            font-size: 18px;
+        }
         .keyinfoheading {
             margin: 30px 0 0 0;
             line-height: 36px;
@@ -476,7 +481,7 @@
             }
         }
         .resp-accordion {
-            
+
             padding: 7px 20px;
             background-color: $colorGallery;
             //margin-top: 0;
@@ -566,6 +571,7 @@
 
 .picomodal {
     width: auto;
+    min-width: 300px;
     position: relative;
     max-width: 1300px;
     overflow: hidden;
@@ -575,30 +581,37 @@
     //    width: 1200px;
     //}
 
+    .block{
+        display: block;
+    }
+    i{
+        font-style: italic;
+    }
+
     @media (max-width: 1150px){
         /* Force table to not be like tables anymore */
-            table, thead, tbody, th, td, tr { 
-                display: block; 
+            table, thead, tbody, th, td, tr {
+                display: block;
             }
             /* Hide table headers (but not display: none;, for accessibility) */
-                thead tr { 
+                thead tr {
                     position: absolute;
                     top: -9999px;
                     left: -9999px;
                 }
-                tr { border-bottom: 15px solid #ccc; 
+                tr { border-bottom: 15px solid #ccc;
                     &:first-child{
                         @media all and (max-width: 600px){
                             margin-top: 15px;
                         }
                     }
                 }
-                    
-                    td { 
+
+                    td {
                         /* Behave  like a "row" */
                         border: none;
                         position: relative;
-                        padding-left: 250px; 
+                        padding-left: 250px;
                         @media all and (max-width: 600px){
                             padding-left: 15px;
                         }
@@ -606,15 +619,15 @@
                             margin-bottom: 5px;
                         }
                     }
-                    
-                    td:before { 
+
+                    td:before {
                         /* Now like a table header */
                         position: absolute;
                         /* Top/left values mimic padding */
                         top: 6px;
                         left: 6px;
-                        width: 45%; 
-                        padding-right: 10px; 
+                        width: 45%;
+                        padding-right: 10px;
                         white-space: nowrap;
                         @media all and (max-width: 600px){
                             position: relative;
@@ -660,20 +673,27 @@
     }
     table {
 
-        
+
+
         th {
             font-weight: bold;
             text-align: left;
         }
         @media (min-width: 1150px){
             margin: 30px auto;
+            td{
+                text-align: center;
+            }
+            th,td{
+                padding: 5px;
+            }
 
         td:first-child {
-            width: 300px;
+
             padding-left: 30px;
         }
         th:first-child {
-            width: 300px;
+
             padding-left: 30px;
         }
         td:last-child {
@@ -682,8 +702,8 @@
         th:last-child {
             padding-right: 30px;
         }
-        
-        tbody tr:nth-child(odd) {
+
+        tbody tr:nth-child(even) {
             background: $colorBase;
         }
     }}
@@ -700,3 +720,11 @@
     max-width: 600px;
     padding: 30px 30px;
 }
+
+#rasjonale, #praktisk, #nokkelinfo{
+  //classes from ../utilities/_snippets.scss
+    @extend .bulletlist;
+    @extend .table;
+}
+
+

@@ -6,10 +6,11 @@
 				<nav>
 					<ol class="container breadcrumbs clearfix">
 						<li><a href="#">Forside</a></li>
-						<li><a href="#" class="active">Nasjonale faglige retningslinjer</a></li>
+						<li><a href="#">Nasjonale faglige retningslinjer</a></li>
+						<li><a href="#" class="active">{{retningslinje.shortTitle}}</a></li>
 					</ol>
 				</nav>
-				
+
 				<h1 class="title">{{retningslinje.shortTitle}}</h1>
 				<span class="subtitle">{{retningslinje.title}}</span>
 				<ul class="hidden-xs metadata">
@@ -17,7 +18,7 @@
 					<li><span class="number">{{retningslinje.updatedDate | date:'yyyy'}}</span>Sist oppdatert</li>
 					<li><span class="number">2214</span>IS-nummer</li>
 				</ul>
-				<a href="" title="" class="aboutguidelineicon"><span class="text">Om retningslinjen</span></a>
+				<a href="" title="" class="aboutguidelineicon" about-guideline-expand><span class="text">Om retningslinjen</span></a>
 			</div>
 		</div>
 		<div class="aboutexpand container">
@@ -38,10 +39,10 @@
 						<input id="searchinput" class="search typeahead" type="text" placeholder="Luftveier, Øye, Mage.." />
 					</div>
 				</form>
-				
+
 				<h2 class="smalltitle small">Innhold i denne retningslinjen</h2>
 				<ul class="sectionlist">
-					
+
 					<li class="element" ng-repeat="section in retningslinje.sections" ng-hide="section.isDeleted">
 						<a ng-if="section.childSections.length > 0" href="#/{{retningslinje.guidelineId}}/childsectionIndex/{{section.sectionId}}">
 							<h3 class="sectionheading"><span class="smalltitle">{{retningslinje.title}}</span>{{section.heading}}</h3>
@@ -54,14 +55,14 @@
 							<h3 class="sectionheading"><span class="smalltitle">{{retningslinje.title}}</span>{{section.heading}}</h3>
 							<div class="sectioninformation hidden-xs">
 								<!--Show number of recommendations if section has no childsections-->
-								<div class="numberofrecommendations">
+								<div class="numberofrecommendations" ng-if="section.recommendations.length > 0">
 									<span class="number">{{section.recommendations.length}}</span>
 									Anbefalinger
 								</div>
 							</div>
 						</a>
 					</li>
-					
+
 				</ul>
 				<div class="module module_social">
 					<a href="javascript:window.print()" class=" ikon_skrivut"><span></span>utskriftsvennlig versjon</a>
@@ -103,7 +104,7 @@
 			</article> <!-- end container -->
 			<script>
 			//We need to wait until Angular is finished with the DOM
-			window.setTimeout(function(){
-			runJqueryUIStuff();
-			}, 500);
+			//window.setTimeout(function(){
+			//runJqueryUIStuff();
+			//}, 500);
 			</script>

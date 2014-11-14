@@ -16,11 +16,10 @@ em{
   font-style: italic;
 }
 
-.orderedlist{
+ol{
   list-style-position: inside;
   margin-top: 10px;
   list-style-type: decimal;
-
 }
 
 .smalltitle{
@@ -49,14 +48,14 @@ h1.nomargin-top{
 
 aside.guidelines {
     @include breakpoint("tablet") {
-        float: none;
+        float: none !important;
     }
     .module.module_person{
         margin-bottom: 50px;
     }
 
     .module_related {
- 
+
         &.module{
             margin-top: 25px; //override default
             &:last-child{
@@ -173,11 +172,15 @@ form.retningslinjerSok {
 
 .container .aboutsection{
     margin-top: 25px;
+    @extend .bulletlist;
 }
 
 .container .aboutsectioncontent{
     background-color: $colorWhite;
     padding: 15px 30px;
+  //classes from ../utilities/_snippets.scss
+  @extend .bulletlist;
+  @extend .table;
 }
 
 .container .aboutsectionheading{
@@ -194,4 +197,16 @@ form.retningslinjerSok {
   font-size: 20px;
   font: $fontSoho;
   z-index: 1;
+}
+
+.breakall{
+  -ms-word-break: break-all;
+       word-break: break-all;
+
+       // Non standard for webkit
+       word-break: break-word;
+
+  -webkit-hyphens: auto;
+     -moz-hyphens: auto;
+          hyphens: auto;
 }

@@ -224,6 +224,15 @@ body {
   margin: 0 10px 0 10px;
   vertical-align: text-bottom;
 }
+.container .breadcrumbs li:last-child a:after,
+.container-fluid .breadcrumbs li:last-child a:after {
+  content: '';
+  }
+
+  .container .breadcrumbs .active,
+  .container-fluid .breadcrumbs .active{
+    text-decoration: none;
+    }
 .container .breadcrumbs a:visited,
 .container-fluid .breadcrumbs a:visited {
   color: #004e66;
