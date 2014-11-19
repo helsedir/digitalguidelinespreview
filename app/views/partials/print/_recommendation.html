@@ -1,9 +1,9 @@
 
 <div>
-	<h3>{{recommendation.heading}}</h3>
-	<small>Styrke: {{recommendation.strength}}</small>
+	<h3 ng-if="recommendation.heading">{{recommendation.heading}}</h3>
+	<recommendation-strength strength="recommendation.strength"></recommendation-strength>
 	<div ng-bind-html="recommendation.text | unsafe"></div>
-	
+
 	<div ng-repeat="keyInfo in recommendation.keyInfo">
 		<h4>Fordeler og ulemper</h4>
 		<div ng-bind-html="keyInfo.benefits | unsafe">
@@ -22,7 +22,7 @@
 		</div>
 	</div>
 
-	<div>
+	<div ng-if="recommendation.picos.length">
 		<h4>Pico</h4>
 		<dl class="dl-horizontal"  ng-repeat="pico in recommendation.picos">
 			<dt>Populasjon</dt>
@@ -36,21 +36,21 @@
 		</dl>
 	</div>
 
-	<div>
+	<div ng-if="recommendation.rational.length > 11">
 		<h4>Begrunnelse</h4>
 		<div ng-bind-html="recommendation.rational | unsafe">
-			
+
 		</div>
 	</div>
 
-	<div>
+	<div ng-if="recommendation.practicalAdvice.length > 5">
 		<h4>Praktisk informasjon</h4>
 		<div ng-bind-html="recommendation.practicalAdvice | unsafe">
-			
+
 		</div>
 	</div>
 
-	<div>
+	<div ng-if="recommendation.references.length">
 		<h4>Referanser</h4>
 		<ol>
 			<li ng-repeat="reference in recommendation.references">

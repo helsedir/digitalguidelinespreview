@@ -45,19 +45,20 @@
 
 					<li class="element" ng-repeat="section in retningslinje.sections" ng-hide="section.isDeleted">
 						<a ng-if="section.childSections.length > 0" href="#/{{retningslinje.guidelineId}}/childsectionIndex/{{section.sectionId}}">
-							<h3 class="sectionheading"><span class="smalltitle">{{retningslinje.title}}</span>{{section.heading}}</h3>
+							<h3 class="sectionheading">{{section.heading}}</h3>
 							<div class="sectioninformation hidden-xs">
 								<!--Show image if we are redirecting to next transport page with childsections-->
 								<img class="haschildsections" src="img/modules/icons/ico-mer.png" alt="" />
 							</div>
 						</a>
 						<a ng-if="section.childSections.length == 0" href="#/{{retningslinje.guidelineId}}/section/{{section.sectionId}}">
-							<h3 class="sectionheading"><span class="smalltitle">{{retningslinje.title}}</span>{{section.heading}}</h3>
+							<h3 class="sectionheading">{{section.heading}}</h3>
 							<div class="sectioninformation hidden-xs">
 								<!--Show number of recommendations if section has no childsections-->
 								<div class="numberofrecommendations" ng-if="section.recommendations.length > 0">
 									<span class="number">{{section.recommendations.length}}</span>
-									Anbefalinger
+                  <span ng-if="section.recommendations.length > 1">Anbefalinger</span>
+                  <span ng-if="section.recommendations.length <= 1">Anbefaling</span>
 								</div>
 							</div>
 						</a>
@@ -65,7 +66,7 @@
 
 				</ul>
 				<div class="module module_social">
-					<a href="javascript:window.print()" class=" ikon_skrivut"><span></span>utskriftsvennlig versjon</a>
+					<a href="#/{{retningslinje.guidelineId}}/print" class=" ikon_skrivut"><span></span>utskriftsvennlig versjon</a>
 					<a href="#" class="ikon_disclaimer"><span></span>disclaimer</a>
 					<a href="#" class="ikon_metode"><span></span>metode</a>
 				</div>

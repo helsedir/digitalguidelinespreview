@@ -210,3 +210,12 @@ form.retningslinjerSok {
      -moz-hyphens: auto;
           hyphens: auto;
 }
+
+#print{
+  @media print {
+    body{
+      font-size: 12pt;
+      line-height: 1.3;
+    }
+  }
+}

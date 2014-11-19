@@ -1,7 +1,6 @@
 
-<article class="container">
-	<a ng-repeat="headline in headlines" ng-click="scrollTo(headline)">{{headline.label}}</a>
-	<div table-of-contents ng-model="guideline">
+<article class="container" id="print">
+	<div>
 
 		<h1>{{guideline.title}}</h1>
 		<small>Publisert {{guideline.createdDate | date}}, oppdatert {{guideline.updatedDate | date}}</small>
@@ -9,57 +8,30 @@
 
 		</div>
 
-		<h2>Forfattere</h2>
+		<h2 ng-if="guideline.authors.length">Forfattere</h2>
 		<ul>
-			<li ng-repeat="author in guideline.authors">
+			<li ng-repeat="author in guideline.authors" ng-if="guideline.authors.length">
 				{{author.name}} - {{author.email}}
 			</li>
 		</ul>
 
 
-		<div ng-repeat="section in guideline.sections">
-			<h2>{{section.heading}}</h2>
+		<div ng-repeat="section in guideline.sections" ng-if="guideline.sections">
+			<h2 ng-if="section.heading">{{section.heading}}</h2>
 			<div ng-bind-html="section.text | unsafe">
-				
 			</div>
-			
-			<print-recommendation ng-repeat="recommendation in section.recommendations" recommendationId="recommendation.recommendationId">
-			</print-recommendation>	
 
+			<print-recommendation ng-repeat="recommendation in section.recommendations" recommendationId="recommendation.recommendationId" >
+			</print-recommendation>
+
+      <div ng-repeat="childSection in section.childSections">
+        <h2 ng-if="childSection.heading">{{childSection.heading}}</h2>
+        <div ng-bind-html="childSection.text | unsafe">
+        </div>
+        <print-recommendation ng-repeat="childRecommendation in childSection.recommendations" recommendationId="childRecommendation.recommendationId" >
+        </print-recommendation>
+      </div>
 		</div>
 
 	</div>
 </article>
-
-
-
-GUIDELINE
-	-title
-	-publisheddate
-	-updateddate
-	-text
-	-disclaimer
-	-AUTHOR
-		-navn
-		-epost
-		-telefon
-	SECTION
-		-heading
-		-text
-		-RECOMMENDATION
-			-heading
-			-strength
-			-text
-			-KEYINFO
-				-benefits (fordeler og ulemper)
-				-evidence (kvalitet p dokumentasjonen)
-				-preference (verdier og preferanser)
-				-resources (ressurshensyn)
-			-PICO
-				-population
-				-intervention
-				-comparator
-				-outcome
-			-rational (begrunnelse)
-			-practicaladvice (parktisk info)
-			-REFERENCES

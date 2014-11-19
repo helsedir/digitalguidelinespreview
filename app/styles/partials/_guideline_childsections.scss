@@ -138,7 +138,7 @@
 
 
     @include breakpoint("tablet"){
-        padding-left: 30px; 
+        padding-left: 30px;
     }
     @include breakpoint("mobile") {
         padding: 10px 15px;
@@ -163,7 +163,7 @@
     > .text {
         padding: 0;
         @media only screen and (min-width: 900px) {
-            
+
             padding-left: 30px;
             width: 70%;
             float: left;
@@ -175,6 +175,7 @@
     margin-top: 25px;
     margin-bottom: 25px;
     .element {
+        min-height: 100px;
         padding: 20px 30px;
         position: relative;
         margin-bottom: 25px;
@@ -190,10 +191,10 @@
 .Guidelinechildsection .sectionheading {
         /*Less padding on mobile */
         padding-right: 10px;
+        margin-top: 10px;
         @media only screen and (min-width: 600px) {
             padding-right: 105px;
         }
-        margin-top: 0;
         color: $colorBondiBlue;
         word-break: break-word;
         span {
@@ -208,7 +209,7 @@
     display: inline-block;
     position: absolute;
     right: 30px;
-    top: 38%;
+    top: 28%;
     .numberofrecommendations {
         color: $colorCloudy;
         font-size: 18px;
@@ -229,7 +230,7 @@
     .haschildsections {
         width: 40px;
         height: 50px;
-        margin-right: 30px;
+        margin-right: 25px;
     }
 }
 /*

@@ -339,7 +339,7 @@ module.exports = function (grunt) {
             '*.{ico,png,txt,config}',
             '.htaccess',
             '*.html',
-            'views/{,*/}*.html',
+            'views/**/*.html',
             'img/{,*/}*{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
             'fonts/{,*/}*{,*/}*',
             'styles/*.css'
@@ -385,12 +385,12 @@ module.exports = function (grunt) {
         overwrite: true,                 // overwrite matched source files
         replacements: [{
           from: "http://localhost:50500/",
-          to: "http://digitalguidelines.azurewebsites.net/"
+          to: "http://nfr-api.azurewebsites.net/"
         },
-        {
-          from: "http://localhost:8000/",
-          to: "http://digitalguidelinesweb.azurewebsites.net/preview/"
-        }]
+          {
+            from: "http://localhost:8000/",
+            to: "http://nfr-web.azurewebsites.net/preview/"
+          }]
       }
     },
 
@@ -448,7 +448,7 @@ module.exports = function (grunt) {
     'usemin',
     'htmlmin',
     'replace'
-    
+
   ]);
 
   grunt.registerTask('default', [
