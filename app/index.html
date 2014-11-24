@@ -273,12 +273,12 @@
        <div ng-view autoscroll="true"></div>
 
     <!--footer-->
-        <div class=" shortcuts" ng-hide="recommendation">
+        <div class=" shortcuts" ng-hide="recommendation || login">
             <ul>
                 <li><a href="#bottom">Bunnlinje</a></li>
             </ul>
         </div>
-        <div id="footer" ng-hide="recommendation">
+        <div id="footer" ng-hide="recommendation || login">
             <footer class=" footerwrapper">
                 <div class=" menuwrapper">
                     <div class="container">
@@ -543,6 +543,7 @@
     <script src="scripts/vendor/magnific-popup.js"></script>
     <script src="scripts/vendor/jquery-responsivetabs.js"></script>
     <script src="scripts/vendor/guideline_jquery.js"></script>
+    <script src="scripts/controllers/loginController.js"></script>
     <script src="scripts/controllers/guideline.js"></script>
     <script src="scripts/controllers/section.js"></script>
     <script src="scripts/controllers/recommendation.js"></script>
@@ -558,6 +559,7 @@
     <script src="scripts/directives/recommendation.js"></script>
     <script src="scripts/directives/recommendationStrength.js"></script>
     <script src="scripts/services/errorservice.js"></script>
+    <script src="scripts/services/authService.js"></script>
     <script src="scripts/controllers/print.js"></script>
     <script src="scripts/directives/printguideline.js"></script>
     <script src="scripts/directives/printauthor.js"></script>

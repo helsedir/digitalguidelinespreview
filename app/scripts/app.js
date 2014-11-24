@@ -18,12 +18,16 @@ angular
   }])
 
 
-  .config(['$routeProvider', 
+  .config(['$routeProvider',
   	function($routeProvider){
   		$routeProvider.when('/', {
   			templateUrl: 'views/main.html',
   			controller: 'MainCtrl'
   		}).
+        when('/login', {
+          templateUrl: 'views/login.html',
+          controller: 'LoginCtrl'
+        }).
   		when('/:guidelineId', {
   			templateUrl: 'views/guideline.html',
   			controller: 'GuidelineCtrl',
@@ -59,8 +63,7 @@ angular
       when('/notpublished/:notpublished', {
         templateUrl: 'views/notpublished.html'
       }).
-     
-  		
+
   		otherwise({
   			redirectTo: '/'
   		});

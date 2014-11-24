@@ -381,7 +381,7 @@ module.exports = function (grunt) {
 
     replace: {
       serverUrl: {
-        src: ['<%= yeoman.dist %>/scripts/*.js'],
+        src: ['<%= yeoman.dist %>/scripts/**/*.js'],
         overwrite: true,                 // overwrite matched source files
         replacements: [{
           from: "http://localhost:50500/",

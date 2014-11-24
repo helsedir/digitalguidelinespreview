@@ -12,7 +12,7 @@ angular.module('guidelinePreviewApp')
       restrict: 'A',
       /*jshint unused: false */
       link: function(scope, element, attrs){
-      		
+
       	element.find('.explainingtext').hide();
 
       	var slider = function(accordion, areaToExpand) {
@@ -42,7 +42,7 @@ angular.module('guidelinePreviewApp')
       	element.find('h2').bind('click', clickHandler);
       	element.find('.button-close').bind('click', clickHandler);
       	$(element).click(function(event) {
-      	            event.preventDefault();
+      	            //event.preventDefault();
       	        });
       }
     };
