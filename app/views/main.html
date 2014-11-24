@@ -7,7 +7,7 @@
                         <li><a href="#">Forside</a></li>
 
                     </ol>
-                    
+
                 </nav>
                 <h1>Retningslinjer og veiledere</h1>
                 <small>Retningslinjer, veiledere, pakkeforløp</small>
@@ -22,7 +22,7 @@
                     <input id="searchinput" class="search typeahead" type="text" placeholder="Amming, Sepsis.." />
                 </div>
             </form>
-            
+
             <div class="content">
                  <aside class="aside">
             <div class="accordion_mobile refinesearch">
@@ -30,23 +30,23 @@
                 <form>
                     <ul>
                         <li>
-                            <input type="radio" name="radiobutton" id="alle" checked>
+                            <input type="radio" name="radiobutton" id="alle" checked ng-click="refineSearch = '0'">
                             <label for="alle"><span></span>Alle</label>
                         </li>
                         <li>
-                            <input type="radio" name="radiobutton" id="nasjonalefagligeretn">
+                            <input type="radio" name="radiobutton" id="nasjonalefagligeretn" ng-click="refineSearch = '1'">
                             <label for="nasjonalefagligeretn"><span></span>Nasjonale faglige retningslinjer</label>
                         </li>
                         <li>
-                            <input type="radio" name="radiobutton" id="prio">
+                            <input type="radio" name="radiobutton" id="prio" ng-click="refineSearch = '4'">
                             <label for="prio"><span></span>Prioriteringsveiledere</label>
                         </li>
                         <li>
-                            <input type="radio" name="radiobutton" id="andre">
+                            <input type="radio" name="radiobutton" id="andre" ng-click="refineSearch = '2'">
                             <label for="andre"><span></span>Andre veiledere</label>
                         </li>
                         <li>
-                            <input type="radio" name="radiobutton" id="kreft">
+                            <input type="radio" name="radiobutton" id="kreft" ng-click="refineSearch = '3'">
                             <label for="kreft"><span></span>Pakkeforløp for kreft</label>
                         </li>
                     </ul>
@@ -57,10 +57,10 @@
                 </form>
             </div>
         </aside>
-           
-            <span class="guidelinecount">{{guidelines.length}} retningslinjer og veiledere</span>
+
+            <span class="guidelinecount">{{filtered.length}} retningslinjer og veiledere</span>
             <ul class="guidelineslist">
-                <li ng-repeat="guideline in guidelines | filter: searchText" class="guideline" ng-hide="guideline.isDeleted">
+                <li ng-repeat="guideline in filtered = (guidelines | filter: searchText | isType:refineSearch)" class="guideline" ng-hide="guideline.isDeleted">
 
                         <a href="#/{{guideline.guidelineId}}">
                             <!-- guidelines.title -->
@@ -93,11 +93,11 @@
                 </li>
             </ul>
             <!-- cols -->
-             
+
         </div>
     </div>
-        
-       
+
+
         <!-- row -->
     </div>
     <div class="row">
@@ -106,7 +106,7 @@
                 <a href="#" class="ikon_metode"><span></span>metode</a>
             </div>
         </div>
-        
+
     </div>
     <!-- end container -->
 </article>
