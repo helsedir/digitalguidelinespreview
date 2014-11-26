@@ -60,7 +60,7 @@
 
             <span class="guidelinecount">{{filtered.length}} retningslinjer og veiledere</span>
             <ul class="guidelineslist">
-                <li ng-repeat="guideline in filtered = (guidelines | filter: searchText | isType:refineSearch)" class="guideline" ng-hide="guideline.isDeleted">
+                <li ng-repeat="guideline in filtered = (guidelines | filter: searchText | isType:refineSearch | orderBy: 'shortTitle')" class="guideline" ng-hide="guideline.isDeleted">
 
                         <a href="#/{{guideline.guidelineId}}">
                             <!-- guidelines.title -->
