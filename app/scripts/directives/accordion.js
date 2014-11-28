@@ -41,9 +41,9 @@ angular.module('guidelinePreviewApp')
 
       	element.find('h2').bind('click', clickHandler);
       	element.find('.button-close').bind('click', clickHandler);
-      	$(element).click(function(event) {
-      	            //event.preventDefault();
-      	        });
+        element.find('.button-close').click(function(event) {
+          event.preventDefault();
+        });
       }
     };
   });
