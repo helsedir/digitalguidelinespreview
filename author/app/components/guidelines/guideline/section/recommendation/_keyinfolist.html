@@ -1,0 +1,26 @@
+<section id="Keyinfos" ng-show="recommendation.recommendationId" class="well">
+	<h3>Nøkkelinformasjon</h3>
+	<table class="table table-hover table-pointer" >
+		<thead>
+			<tr>
+				<th>#</th>
+				<th class="hidden-xs">Opprettet</th>
+				<th>Oppdatert</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="key in recommendation.keyInfo">
+				<td class="col-sm-1" btn-href="/guideline/{{guidelineId}}/section/{{sectionId}}/recommendation/{{recommendation.recommendationId}}/keyinfo/{{key.keyInfoId}}">{{$index+1}}</td>
+				<td class="col-sm-2 hidden-xs" btn-href="/guideline/{{guidelineId}}/section/{{sectionId}}/recommendation/{{recommendation.recommendationId}}/keyinfo/{{key.keyInfoId}}">{{key.createdDate | date}}</td>
+				<td class="col-sm-2" btn-href="/guideline/{{guidelineId}}/section/{{sectionId}}/recommendation/{{recommendation.recommendationId}}/keyinfo/{{key.keyInfoId}}">{{key.updatedDate | date}}</td>
+				<td class="text-right col-sm-3">
+					<button type="button" class="btn btn-link btn-delete" ng-click="deleteKeyInfoBtnClick($index)" ng-confirm-click="Er du sikker på at du vil slette key info med id {{key.keyInfoId}}">Slett <span class="glyphicon glyphicon-remove"></span></button>
+					
+					<button type="button" class="btn btn-link" btn-href="/guideline/{{guidelineId}}/section/{{sectionId}}/recommendation/{{recommendation.recommendationId}}/keyinfo/{{key.keyInfoId}}">Rediger <span class="glyphicon glyphicon-pencil"></span></button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<button type="button" class="btn btn-secondary" ng-click="addKeyInfoBtnClick()" ng-hide="recommendation.keyInfo.length >= 1">Legg til nøkkelinformasjon</button>
+</section>

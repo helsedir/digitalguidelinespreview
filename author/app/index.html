@@ -1,0 +1,151 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) assets/styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.css" />
+    <!-- endbower -->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <!-- endbuild -->
+    <!-- build:css assets/styles/main.css -->
+    <link rel="stylesheet" href="assets/styles/main.css">
+    <link rel="stylesheet" href="assets/styles/redactor.css">
+    <!-- endbuild -->
+</head>
+<body ng-app="webUiApp">
+<!--[if lt IE 8]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<!-- Add your site or application content here -->
+
+<div class="navbar navbar-default navbar-static-top" role="navigation" ng-controller="headerCtrl">
+     <div class="container">
+       <div class="navbar-header">
+         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+           <span class="sr-only">Toggle navigation</span>
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+         </button>
+         <a class="navbar-brand" href="#"><img src="assets/images/helsedir.png"> Nasjonale faglige retningslinjer</a>
+       </div>
+
+       <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+            <li class="divider-vertical" ng-class="{ active: isActive('/')}"><a href="#/" title="">Hjem</a></li>
+            <li class="divider-vertical" ng-class="{ active: isActive('/author')}"><a href="#/author" title="" >Alle forfattere</a></li>
+            <li class="divider-vertical" ng-class="{ active: isActive('/reference')}"><a href="#/reference" title="">Alle referanser</a></li>
+        </ul>
+        <log-In></log-In>
+       </div><!--/.nav-collapse -->
+     </div>
+   </div>
+
+<div class="container">
+  
+  <div class="col-md-8 col-md-offset-2">
+    
+  
+    <div ncy-breadcrumb></div>
+    <div ui-view=""></div>
+    </div>
+</div>
+
+
+<!-- build:js(.) scripts/oldieshim.js -->
+<!--[if lt IE 9]>
+<script src="bower_components/es5-shim/es5-shim.js"></script>
+<script src="bower_components/json3/lib/json3.min.js"></script>
+<![endif]-->
+<!-- endbuild -->
+<!-- build:js(.) scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/json3/lib/json3.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-touch/angular-touch.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/jquery-ui/jquery-ui.js"></script>
+<script src="bower_components/angular-ui-sortable/sortable.js"></script>
+<script src="bower_components/angular-local-storage/angular-local-storage.js"></script>
+<script src="bower_components/angular-toastr/dist/angular-toastr.js"></script>
+<script src="bower_components/ng-breadcrumbs/dist/ng-breadcrumbs.min.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="bower_components/angular-breadcrumb/release/angular-breadcrumb.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<script src="bower_components/angular-modal-service/dst/angular-modal-service.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+
+
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<script src="assets/libs/angular-redactor.js"></script>
+<script src="assets/libs/redactor.js"></script>
+<script src="assets/libs/redactor_table.js"></script>
+<script src="app.js"></script>
+<script src="common/directives/btnHrefDirective.js"></script>
+<script src="common/directives/confirmClickDirective.js"></script>
+<script src="common/directives/loginDirective.js"></script>
+<script src="common/directives/metadataDirective.js"></script>
+<script src="common/directives/previewButtonDirective.js"></script>
+<script src="common/directives/publishedStatusDirective.js"></script>
+<script src="common/directives/sortOrderDirective.js"></script>
+<script src="common/services/authInterceptorService.js"></script>
+<script src="common/services/authService.js"></script>
+<script src="common/services/crudService.js"></script>
+<script src="common/services/notificationFactory.js"></script>
+<script src="common/header.js"></script>
+<script src="common/loginController.js"></script>
+<script src="common/registerController.js"></script>
+<script src="components/author/authorController.js"></script>
+<script src="components/author/authorFactory.js"></script>
+<script src="components/reference/referenceController.js"></script>
+<script src="components/reference/referenceFactory.js"></script>
+<script src="components/guidelines/guidelinesController.js"></script>
+<script src="components/guidelines/guideline/guidelineController.js"></script>
+<script src="components/guidelines/guideline/guidelineFactory.js"></script>
+<script src="components/guidelines/guideline/authorsListDirective.js"></script>
+<script src="components/guidelines/guideline/sectionsListDirective.js"></script>
+<script src="components/guidelines/guideline/section/sectionController.js"></script>
+<script src="components/guidelines/guideline/section/sectionFactory.js"></script>
+<script src="components/guidelines/guideline/section/subsectionsListDirective.js"></script>
+<script src="components/guidelines/guideline/section/recommendationsListDirective.js"></script>
+<script src="components/guidelines/guideline/section/recommendation/recommendationController.js"></script>
+<script src="components/guidelines/guideline/section/recommendation/recommendationFactory.js"></script>
+<script src="components/guidelines/guideline/section/recommendation/emrInfoListDirective.js"></script>
+<script src="components/guidelines/guideline/section/recommendation/keyInfoListDirective.js"></script>
+<script src="components/guidelines/guideline/section/recommendation/picosListDirective.js"></script>
+<script src="components/guidelines/guideline/section/recommendation/referencesListDirective.js"></script>
+<script src="components/guidelines/guideline/section/recommendation/emrinfo/emrInfoController.js"></script>
+<script src="components/guidelines/guideline/section/recommendation/emrinfo/emrInfoFactory.js"></script>
+<script src="components/guidelines/guideline/section/recommendation/keyinfo/keyInfoController.js"></script>
+<script src="components/guidelines/guideline/section/recommendation/keyinfo/keyInfoFactory.js"></script>
+<script src="components/guidelines/guideline/section/recommendation/pico/picoController.js"></script>
+<script src="components/guidelines/guideline/section/recommendation/pico/picoFactory.js"></script>
+<script src="components/guidelines/guideline/section/recommendation/pico/picoCodesListDirective.js"></script>
+<script src="components/guidelines/guideline/section/recommendation/pico/picoOutcomesListDirective.js"></script>
+<script src="components/guidelines/guideline/section/recommendation/pico/picooutcome/picoOutcomeController.js"></script>
+<script src="components/guidelines/guideline/section/recommendation/pico/picooutcome/picoOutcomeFactory.js"></script>
+<script src="components/guidelines/guideline/section/recommendation/pico/picocode/picoCodeController.js"></script>
+<script src="components/guidelines/guideline/section/recommendation/pico/picocode/picoCodeFactory.js"></script>
+<script src="components/guidelines/guideline/section/recommendation/pico/picocode/taxonomyCodesListDirective.js"></script>
+<script src="components/guidelines/guideline/section/recommendation/pico/picocode/taxonomycode/taxonomyCodeController.js"></script>
+<script src="components/guidelines/guideline/section/recommendation/pico/picocode/taxonomycode/taxonomyCodeFactory.js"></script>
+<!-- endbuild -->
+
+</body>
+</html>

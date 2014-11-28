@@ -1,0 +1,47 @@
+<article>
+	<div class="row relative">
+		<div class="col-md-8 resourceheader">
+			<h1>Seksjon</h1>&nbsp;&nbsp;&nbsp; 
+			<published-status></published-status>
+
+		</div>
+		<div class="col-md-4 previewbuttoncontainer">
+			<preview-button></preview-button>
+		</div>
+	</div>
+
+	<section id="Section">
+		
+		<form role="form" ng-submit="updateOrCreateSection()">
+			<div class="form-group">
+				<label for="heading">Tittel</label>
+				<input type="text" class="form-control" id="heading" ng-model="section.heading">
+			</div>
+			<!-- <div class="form-group">
+					<label for="text">Text</label>
+					<textArea type="text" class="form-control" id="text" ng-model="section.text"></textArea>
+			</div> -->
+			<div class="form-group">
+				<label for="text">Tekst</label>
+				<textarea id="text" ng-model="section.text" redactor></textarea>
+			</div>
+			<div class="form-group col-md-12">
+				<label for="type">Publiseringsstatus</label>
+				<select class="form-control" id="type" ng-model="section.publishedStage">
+					<option value="0">Kladd</option>
+					<option value="1">Høringsutkast</option>
+					<option value="2">Publisert</option>
+				</select>
+			</div>
+			<button type="submit" class="btn btn-primary btn-lg">Lagre</button>
+			<button ng-show="section.sectionId" type="button" class="btn btn-link btn-delete" ng-confirm-click="Er du sikker på at du vil slette seksjonen {{section.heading}}" ng-click="deleteSectionBtnClick()">Slett <span class="glyphicon glyphicon-remove"></span></button>
+		</form>
+	</section>
+	<br><br>
+	
+	<recommendations-list></recommendations-list>
+
+	<subsections-list></subsections-list>
+	
+	<metadata ng-show="section.sectionId" created-by="{{section.createdBy}}" updated-by="{{section.updatedBy}}" created-date="{{section.createdDate}}" updated-date="{{section.updatedDate}}"></metadata>
+</article>
